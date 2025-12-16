@@ -1,0 +1,161 @@
+    <!doctype html>
+    <html lang="it">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Materiali — Progetto Teatro</title>
+      <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+      <meta name="description" content="Progetto teatrale scuola - sito ufficiale">
+      <style>
+:root{
+  --bg:#0f0f12;
+  --card:#fff;
+  --accent:#b52324;
+  --muted:#bdbdbd;
+  --glass: rgba(255,255,255,0.04);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:linear-gradient(180deg,#0c0c0f 0%, #101217 60%); color:var(--card); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;}
+.container{max-width:1100px;margin:32px auto;padding:24px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;backdrop-filter: blur(4px);}
+.header{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;}
+.brand{display:flex;align-items:center;gap:14px}
+.logo{width:52px;height:52px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#6b0f12);display:flex;align-items:center;justify-content:center;font-weight:700;box-shadow:0 6px 18px rgba(181,35,36,0.16)}
+.brand h1{font-size:1.3rem;color:var(--card)}
+.nav{display:flex;gap:12px;align-items:center}
+.nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:600}
+.nav a:hover{color:var(--card);background:var(--glass)}
+
+.hamburger{display:none;background:none;border:1px solid rgba(255,255,255,0.04);padding:8px;border-radius:8px;color:var(--card)}
+
+/* hero */
+.hero{padding:56px 24px;border-radius:12px;margin:18px 0;background:linear-gradient(180deg, rgba(181,35,36,0.12), rgba(0,0,0,0.18));box-shadow:0 8px 30px rgba(0,0,0,0.45);text-align:center;}
+.hero h2{font-size:2.2rem;margin-bottom:8px}
+.hero p{color:var(--muted);max-width:820px;margin:0 auto;line-height:1.6}
+
+/* grid */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:18px}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.5);transition:transform .25s ease, box-shadow .25s ease;cursor:pointer;border:1px solid rgba(255,255,255,0.03)}
+.card:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(0,0,0,0.6)}
+.card h3{color:var(--accent);margin-bottom:8px}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.gallery img{width:100%;height:140px;object-fit:cover;border-radius:10px;display:block;}
+
+/* footer */
+footer{padding:28px;text-align:center;color:var(--muted);margin-top:30px;border-top:1px solid rgba(255,255,255,0.02)}
+
+/* cards inside content */
+.content h2{color:var(--card);margin-bottom:12px}
+.content p, .content li{color:var(--muted);line-height:1.6}
+
+/* responsive navigation */
+@media (max-width:880px){
+  .nav{display:none}
+  .hamburger{display:block}
+  .mobile-menu{display:none;position:absolute;right:18px;top:72px;background:linear-gradient(180deg, rgba(15,15,18,0.98), rgba(20,20,25,0.98));border-radius:10px;padding:12px;box-shadow:0 8px 30px rgba(0,0,0,0.6);}
+  .mobile-menu a{display:block;padding:10px;color:var(--muted);text-decoration:none;border-radius:8px}
+  .mobile-menu a:hover{color:var(--card);background:var(--glass)}
+}
+
+/* subtle fade-in animations */
+.fade-up{opacity:0;transform:translateY(10px);animation:fadeUp .6s forwards}
+@keyframes fadeUp{to{opacity:1;transform:none}}
+
+/* small helpers */
+.kv{display:flex;gap:10px;align-items:center;color:var(--muted);font-weight:600}
+.btn{display:inline-block;padding:10px 14px;border-radius:8px;background:var(--accent);color:white;text-decoration:none;font-weight:700;margin-top:8px}
+.badge{background:rgba(255,255,255,0.04);padding:6px 10px;border-radius:999px;color:var(--muted);font-weight:700}
+</style>
+    </head>
+    <body>
+      <header class="header container" role="banner">
+        <div class="brand">
+          <div class="logo">PT</div>
+          <h1>Progetto Teatro</h1>
+        </div>
+        <nav class="nav" role="navigation" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="copione.html">Copione</a>
+          <a href="musiche.html">Musiche</a>
+          <a href="personaggi.html">Personaggi</a>
+          <a href="calendario.html">Calendario</a>
+          <a href="galleria.html">Galleria</a>
+          <a href="materiali.html">Materiali</a>
+          <a href="contatti.html">Contatti</a>
+        </nav>
+        <button id="hamb" class="hamburger" aria-label="Apri menu">☰</button>
+        <div id="mobileMenu" class="mobile-menu" style="display:none">
+          <a href="index.html">Home</a>
+          <a href="copione.html">Copione</a>
+          <a href="musiche.html">Musiche</a>
+          <a href="personaggi.html">Personaggi</a>
+          <a href="calendario.html">Calendario</a>
+          <a href="galleria.html">Galleria</a>
+          <a href="materiali.html">Materiali</a>
+          <a href="contatti.html">Contatti</a>
+        </div>
+      </header>
+
+      <main class="container content" role="main">
+
+<h2>Materiali & Fornitori</h2>
+
+<table style="border-collapse: collapse; width: 100%; text-align: left; font-family: Arial, sans-serif;">
+  <thead>
+    <tr style="background-color: #B691D2;">
+      <th style="border: 1px solid #ccc; padding: 8px;">Materiale / Fornitore</th>
+      <th style="border: 1px solid #ccc; padding: 8px;">Link</th>
+      <th style="border: 1px solid #ccc; padding: 8px;">Personaggio collegato</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;">Aaron Warner</td>
+      <td style="border: 1px solid #ccc; padding: 8px;"><a href="https://en.wikipedia.org/wiki/Shatter_Me" target="_blank">Scheda</a></td>
+      <td style="border: 1px solid #ccc; padding: 8px;">Marito di Samia (Shatter Me)</td>
+    </tr>
+    <tr style="background-color: #ccc;">
+      <td style="border: 1px solid #ccc; padding: 8px;">Sebastian Stan</td>
+      <td style="border: 1px solid #ccc; padding: 8px;"><a href="https://it.wikipedia.org/wiki/Sebastian_Stan" target="_blank">Scheda</a></td>
+      <td style="border: 1px solid #ccc; padding: 8px;">Marito di Samia(Marvel, teatro)</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;">Libri</td>
+      <td style="border: 1px solid #ccc; padding: 8px;"><a href="https://www.mondadoristore.it/" target="_blank">Libreria</a></td>
+      <td style="border: 1px solid #ccc; padding: 8px;">Materiale per volare via</td>
+    </tr>
+    <tr style="background-color: #ccc;">
+      <td style="border: 1px solid #ccc; padding: 8px;">Nuova prof di sistemi e reti</td>
+      <td style="border: 1px solid #ccc; padding: 8px;"><a href="#" target="_blank">Profilo</a></td>
+      <td style="border: 1px solid #ccc; padding: 8px;">Docente collegata al progetto</td>
+    </tr>
+  </tbody>
+</table>
+<p class="badge">Ho messo cose a caso perchè martina non mi ha mandato i materiali :(</p>
+
+      </main>
+
+      <script>
+document.addEventListener('DOMContentLoaded', function(){
+  const hamb = document.querySelector('#hamb');
+  const mobile = document.querySelector('#mobileMenu');
+  if(hamb && mobile){
+    hamb.addEventListener('click', () => {
+      mobile.style.display = mobile.style.display === 'block' ? 'none' : 'block';
+    });
+  }
+  // add fade-up to visible cards
+  const els = document.querySelectorAll('.fade-up');
+  els.forEach((el, i) => {
+    el.style.animationDelay = (i * 80) + 'ms';
+  });
+});
+</script>
+     <footer class="container"> 
+<p>© Progetto Teatro — Creato dall'ingeniere </p> 
+<p>⊹₊ ˚‧︵‿₊୨୧₊‿︵‧ ˚ ₊⊹</p> 
+</footer>
+    </body>
+    </html>
