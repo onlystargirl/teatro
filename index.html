@@ -1,0 +1,143 @@
+    <!doctype html>
+    <html lang="it">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Index — Progetto Teatro</title>
+      <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+      <meta name="description" content="Progetto teatrale scuola - sito ufficiale">
+      <style>
+:root{
+  --bg:#0f0f12;
+  --card:#fff;
+  --accent:#b52324;
+  --muted:#bdbdbd;
+  --glass: rgba(255,255,255,0.04);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:linear-gradient(180deg,#0c0c0f 0%, #101217 60%); color:var(--card); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;}
+.container{max-width:1100px;margin:32px auto;padding:24px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;backdrop-filter: blur(4px);}
+.header{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;}
+.brand{display:flex;align-items:center;gap:14px}
+.logo{width:52px;height:52px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#6b0f12);display:flex;align-items:center;justify-content:center;font-weight:700;box-shadow:0 6px 18px rgba(181,35,36,0.16)}
+.brand h1{font-size:1.3rem;color:var(--card)}
+.nav{display:flex;gap:12px;align-items:center}
+.nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:600}
+.nav a:hover{color:var(--card);background:var(--glass)}
+
+.hamburger{display:none;background:none;border:1px solid rgba(255,255,255,0.04);padding:8px;border-radius:8px;color:var(--card)}
+
+/* hero */
+.hero{padding:56px 24px;border-radius:12px;margin:18px 0;background:linear-gradient(180deg, rgba(181,35,36,0.12), rgba(0,0,0,0.18));box-shadow:0 8px 30px rgba(0,0,0,0.45);text-align:center;}
+.hero h2{font-size:2.2rem;margin-bottom:8px}
+.hero p{color:var(--muted);max-width:820px;margin:0 auto;line-height:1.6}
+
+/* grid */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:18px}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.5);transition:transform .25s ease, box-shadow .25s ease;cursor:pointer;border:1px solid rgba(255,255,255,0.03)}
+.card:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(0,0,0,0.6)}
+.card h3{color:var(--accent);margin-bottom:8px}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.gallery img{width:100%;height:140px;object-fit:cover;border-radius:10px;display:block;}
+
+/* footer */
+footer{padding:28px;text-align:center;color:var(--muted);margin-top:30px;border-top:1px solid rgba(255,255,255,0.02)}
+
+/* cards inside content */
+.content h2{color:var(--card);margin-bottom:12px}
+.content p, .content li{color:var(--muted);line-height:1.6}
+
+/* responsive navigation */
+@media (max-width:880px){
+  .nav{display:none}
+  .hamburger{display:block}
+  .mobile-menu{display:none;position:absolute;right:18px;top:72px;background:linear-gradient(180deg, rgba(15,15,18,0.98), rgba(20,20,25,0.98));border-radius:10px;padding:12px;box-shadow:0 8px 30px rgba(0,0,0,0.6);}
+  .mobile-menu a{display:block;padding:10px;color:var(--muted);text-decoration:none;border-radius:8px}
+  .mobile-menu a:hover{color:var(--card);background:var(--glass)}
+}
+
+/* subtle fade-in animations */
+.fade-up{opacity:0;transform:translateY(10px);animation:fadeUp .6s forwards}
+@keyframes fadeUp{to{opacity:1;transform:none}}
+
+/* small helpers */
+.kv{display:flex;gap:10px;align-items:center;color:var(--muted);font-weight:600}
+.btn{display:inline-block;padding:10px 14px;border-radius:8px;background:var(--accent);color:white;text-decoration:none;font-weight:700;margin-top:8px}
+.badge{background:rgba(255,255,255,0.04);padding:6px 10px;border-radius:999px;color:var(--muted);font-weight:700}
+</style>
+    </head>
+    <body>
+      <header class="header container" role="banner">
+        <div class="brand">
+          <div class="logo">PT</div>
+          <h1>Progetto Teatro</h1>
+        </div>
+        <nav class="nav" role="navigation" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="copione.html">Copione</a>
+          <a href="musiche.html">Musiche</a>
+          <a href="personaggi.html">Personaggi</a>
+          <a href="calendario.html">Calendario</a>
+          <a href="galleria.html">Galleria</a>
+          <a href="materiali.html">Materiali</a>
+          <a href="contatti.html">Contatti</a>
+        </nav>
+        <button id="hamb" class="hamburger" aria-label="Apri menu">☰</button>
+        <div id="mobileMenu" class="mobile-menu" style="display:none">
+          <a href="index.html">Home</a>
+          <a href="copione.html">Copione</a>
+          <a href="musiche.html">Musiche</a>
+          <a href="personaggi.html">Personaggi</a>
+          <a href="calendario.html">Calendario</a>
+          <a href="galleria.html">Galleria</a>
+          <a href="materiali.html">Materiali</a>
+          <a href="contatti.html">Contatti</a>
+        </div>
+      </header>
+
+      <main class="container content" role="main">
+
+<section class="hero fade-up">
+  <h2>Il nostro spettacolo — Stagione 2026</h2>
+  <p>Un adattamento originale, musicale e visivo del Cantico e storie di mare e memoria. Scopri il progetto, il cast e le date delle prove.</p>
+  <a class="btn" href="spettacolo.html">Dettagli spettacolo</a>
+</section>
+
+<section class="grid" style="margin-top:20px">
+  <a class="card fade-up" href="copione.html"><h3>Copione</h3><p>Testo completo con atti e scene.</p></a>
+  <a class="card fade-up" href="musiche.html"><h3>Musiche</h3><p>Colonna sonora e canzoni usate.</p></a>
+  <a class="card fade-up" href="personaggi.html"><h3>Personaggi</h3><p>Ruoli e chi li interpreta.</p></a>
+  <a class="card fade-up" href="calendario.html"><h3>Calendario Prove</h3><p>Date, orari e note per le prove.</p></a>
+  <a class="card fade-up" href="galleria.html"><h3>Galleria</h3><p>Foto e video backstage.</p></a>
+  <a class="card fade-up" href="materiali.html"><h3>Materiali</h3><p>Link ai fornitori e lista oggetti.</p></a>
+  <a class="card fade-up" href="cantico.html"><h3>Cantico</h3><p>Il Cantico originale e parafrasi.</p></a>
+</section>
+
+      </main>
+
+      <script>
+document.addEventListener('DOMContentLoaded', function(){
+  const hamb = document.querySelector('#hamb');
+  const mobile = document.querySelector('#mobileMenu');
+  if(hamb && mobile){
+    hamb.addEventListener('click', () => {
+      mobile.style.display = mobile.style.display === 'block' ? 'none' : 'block';
+    });
+  }
+  // add fade-up to visible cards
+  const els = document.querySelectorAll('.fade-up');
+  els.forEach((el, i) => {
+    el.style.animationDelay = (i * 80) + 'ms';
+  });
+});
+</script>
+     <footer class="container"> 
+<p>© Progetto Teatro — Creato dall'ingeniere </p> 
+<p>⊹₊ ˚‧︵‿₊୨୧₊‿︵‧ ˚ ₊⊹</p> 
+</footer>
+
+    </body>
+    </html>
