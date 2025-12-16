@@ -1,0 +1,1009 @@
+    <!doctype html>
+    <html lang="it">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Copione — Progetto Teatro</title>
+      <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+      <meta name="description" content="Progetto teatrale scuola - sito ufficiale">
+      <style>
+:root{
+  --bg:#0f0f12;
+  --card:#fff;
+  --accent:#b52324;
+  --muted:#bdbdbd;
+  --glass: rgba(255,255,255,0.04);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:linear-gradient(180deg,#0c0c0f 0%, #101217 60%); color:var(--card); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;}
+.container{max-width:1100px;margin:32px auto;padding:24px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;backdrop-filter: blur(4px);}
+.header{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;}
+.brand{display:flex;align-items:center;gap:14px}
+.logo{width:52px;height:52px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#6b0f12);display:flex;align-items:center;justify-content:center;font-weight:700;box-shadow:0 6px 18px rgba(181,35,36,0.16)}
+.brand h1{font-size:1.3rem;color:var(--card)}
+.nav{display:flex;gap:12px;align-items:center}
+.nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:600}
+.nav a:hover{color:var(--card);background:var(--glass)}
+
+.hamburger{display:none;background:none;border:1px solid rgba(255,255,255,0.04);padding:8px;border-radius:8px;color:var(--card)}
+
+/* hero */
+.hero{padding:56px 24px;border-radius:12px;margin:18px 0;background:linear-gradient(180deg, rgba(181,35,36,0.12), rgba(0,0,0,0.18));box-shadow:0 8px 30px rgba(0,0,0,0.45);text-align:center;}
+.hero h2{font-size:2.2rem;margin-bottom:8px}
+.hero p{color:var(--muted);max-width:820px;margin:0 auto;line-height:1.6}
+
+/* grid */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:18px}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.5);transition:transform .25s ease, box-shadow .25s ease;cursor:pointer;border:1px solid rgba(255,255,255,0.03)}
+.card:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(0,0,0,0.6)}
+.card h3{color:var(--accent);margin-bottom:8px}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.gallery img{width:100%;height:140px;object-fit:cover;border-radius:10px;display:block;}
+
+/* footer */
+footer{padding:28px;text-align:center;color:var(--muted);margin-top:30px;border-top:1px solid rgba(255,255,255,0.02)}
+
+/* cards inside content */
+.content h2{color:var(--card);margin-bottom:12px}
+.content p, .content li{color:var(--muted);line-height:1.6}
+
+/* responsive navigation */
+@media (max-width:880px){
+  .nav{display:none}
+  .hamburger{display:block}
+  .mobile-menu{display:none;position:absolute;right:18px;top:72px;background:linear-gradient(180deg, rgba(15,15,18,0.98), rgba(20,20,25,0.98));border-radius:10px;padding:12px;box-shadow:0 8px 30px rgba(0,0,0,0.6);}
+  .mobile-menu a{display:block;padding:10px;color:var(--muted);text-decoration:none;border-radius:8px}
+  .mobile-menu a:hover{color:var(--card);background:var(--glass)}
+}
+
+/* subtle fade-in animations */
+.fade-up{opacity:0;transform:translateY(10px);animation:fadeUp .6s forwards}
+@keyframes fadeUp{to{opacity:1;transform:none}}
+
+/* small helpers */
+.kv{display:flex;gap:10px;align-items:center;color:var(--muted);font-weight:600}
+.btn{display:inline-block;padding:10px 14px;border-radius:8px;background:var(--accent);color:white;text-decoration:none;font-weight:700;margin-top:8px}
+.badge{background:rgba(255,255,255,0.04);padding:6px 10px;border-radius:999px;color:var(--muted);font-weight:700}
+</style>
+    </head>
+    <body>
+      <header class="header container" role="banner">
+        <div class="brand">
+          <div class="logo">PT</div>
+          <h1>Progetto Teatro</h1>
+        </div>
+        <nav class="nav" role="navigation" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="copione.html">Copione</a>
+          <a href="musiche.html">Musiche</a>
+          <a href="personaggi.html">Personaggi</a>
+          <a href="calendario.html">Calendario</a>
+          <a href="galleria.html">Galleria</a>
+          <a href="materiali.html">Materiali</a>
+          <a href="contatti.html">Contatti</a>
+        </nav>
+        <button id="hamb" class="hamburger" aria-label="Apri menu">☰</button>
+        <div id="mobileMenu" class="mobile-menu" style="display:none">
+          <a href="index.html">Home</a>
+          <a href="copione.html">Copione</a>
+          <a href="musiche.html">Musiche</a>
+          <a href="personaggi.html">Personaggi</a>
+          <a href="calendario.html">Calendario</a>
+          <a href="galleria.html">Galleria</a>
+          <a href="materiali.html">Materiali</a>
+          <a href="contatti.html">Contatti</a>
+        </div>
+      </header>
+<section id="copione-filtrato" style="margin-top:50px;">
+    <h2>Copione🎬</h2>
+    <p>Filtra il copione in base al personaggio:</p>
+
+    <select id="personaggioSelect" style="
+        padding:10px;
+        border-radius:10px;
+        font-size:1rem;
+        border:2px solid #7abaff;
+        margin-bottom:20px;">
+        <option value="Copione completo">Copione completo</option>
+        <option value="Frate Sole">Frate Sole</option>
+        <option value="Sora Luna">Sora Luna</option>
+        <option value="Sorelle Stelle">Sorelle Stelle</option>
+        <option value="Sorella Vento">Sorella Vento</option>
+	 <option value="Frate Fuoco">Frate Fuoco</option>
+	 <option value="Sora Acqua">Sora Acqua</option>
+	 <option value="Sora Madre Terra">Sora Madre Terra</option>
+	 <option value="Il Lupo (spacciatore)">Il Lupo (spacciatore)</option>
+    </select>
+
+<div class="battuta" data-personaggio="Copione completo"><p><strong>INTRODUZIONE:</strong></p>
+<p><em>(Luci basse. Sul palco un coro di studenti sparsi, ognuno con un cellulare acceso. Notifiche, vibrazioni, suoni. Il palco è rumoroso, frenetico.)</em><br>
+Brano 1(sottofondo)The Social Network OST – Hand Covers Bruise</p>
+
+<p><strong>VOCE NARRANTE</strong> (voce ferma): Viviamo in un mondo che corre.<br>
+Notifiche<br>
+Scadenze,<br>
+Impegni.<br>
+Connessione continua…<br>
+ma spesso nessun contatto vero.</p>
+
+<p><em>(Gli studenti si muovono freneticamente, ognuno preso dal proprio telefono, dalle proprie “urgenze”.)</em><br>
+Consumiamo cose.<br>
+Consumiamo tempo.</p>
+
+<p><em>(Breve pausa. Una luce singola si accende su un ragazzo al centro. Abiti semplici: jeans, una felpa neutra, magari uno zaino consumato.)</em></p>
+
+<p><strong>VOCE NARRANTE</strong>: A volte… consumiamo anche noi stessi.<br>
+Eppure,<br>
+anche oggi,<br>
+proprio oggi ,<br>
+potrebbe apparire qualcuno capace di camminare controcorrente.<br>
+Non un eroe. Non un influencer. Non un predicatore perfetto.<br>
+(lento) Ma un uomo… stropicciato, vulnerabile, appassionato.<br>
+<em>(lentamente si spengono i telefoni. Rumori digitali si affievoliscono.)</em></p>
+
+<p>Questo spettacolo nasce da una domanda semplice ma potente:<br>
+“cosa farebbe San Francesco se vivesse oggi?”<br>
+Viviamo in un tempo complesso:<br>
+guerre che non sembrano finire,<br>
+povertà che cresce dietro l’angolo,<br>
+crisi climatiche che minacciano il futuro del pianeta,<br>
+persone che corrono senza più trovare un senso.<br>
+In questo rumore, in questa confusione, ci siamo chiesti:<br>
+“avrebbe ancora qualcosa da dirci un giovane di Assisi vissuto ottocento anni fa?”<br>
+La risposta, per noi, è SÌ.<br>
+E forse, più che mai.</p>
+
+<p>Abbiamo immaginato un Francesco dentro il mondo di oggi, non come figura sacra da museo,<br>
+non come eroe irraggiungibile,<br>
+ma come un ragazzo capace di mettersi in cammino controcorrente.<br>
+Un ragazzo che non fugge i problemi / li attraversa.<br>
+Che non alza la voce / ascolta.<br>
+Che non predica / vive.<br>
+In un tempo in cui tutto spinge a correre/ lui sceglie la lentezza.<br>
+In un sistema che misura il valore in base a ciò che possiedi, lui sceglie la SEMPLICITÀ.<br>
+Davanti ai conflitti, alla violenza e alle divisioni, lui prova a costruire PONTI, non muri.<br>
+Davanti al dolore del pianeta, si sente RESPONSABILE, non spettatore.<br>
+Per questo abbiamo deciso di raccontare un Francesco moderno.<br>
+Perché il suo sguardo limpido può ancora illuminare i nostri dubbi,<br>
+perché il suo “poco” può diventare il nostro “basta”,<br>
+perché la sua fragilità può insegnarci che non serve essere perfetti per fare la differenza.<br>
+Il nostro San Francesco, lo immaginiamo.<br>
+Non vestito di sacco / ma di SEMPLICITÀ.<br>
+Non armato di miracoli / ma di SGUARDI LIMPIDI.<br>
+Non fuori dal mondo / ma DENTRO LE NOSTRE STESSE CONTRADDIZIONI.<br>
+Perché a volte basta qualcuno che cammina piano, per mostrarci dove abbiamo smesso di guardare.<br>
+<em>(il brano sfuma)</em></p>
+
+
+<br> 
+<br> 
+
+<p><strong>PRIMA SCENA: “Controcorrente”</strong><br>
+<em>(Francesco cammina lentamente mentre intorno tutti si muovono velocissimi.)</em></p>
+
+<p>1: Dai, muoviti! È tardi!<br>
+2: Hai visto l’ultima storia? Sta spaccando!<br>
+3: Se non produci, non vali.<br>
+4: Se non corri, resti indietro.<br>
+<em>(Il movimento del gruppo è frenetico: gesti ripetitivi, simili a una coreografia. Francesco continua a camminare lentamente, quasi in meditazione.)</em></p>
+
+<p><strong>FRANCESCO</strong> (calmo, al 4 ragazzo): Perché dovrei correre? La vita non è una gara.<br>
+4: (si ferma, confuso) Ma… tutti corrono.<br>
+<strong>FRANCESCO</strong>: Appunto.<br>
+<em>(tutti si fermano e lo osservano)</em><br>
+3: (ironico) E tu chi saresti? Un ribelle?<br>
+<strong>FRANCESCO</strong> (sorridendo): Solo uno che prova a respirare. <em>(Si sdraia o siede a terra, semplice. Gli altri osservano, spiazzati.)</em> In un mondo che vuole tutto e subito… io scelgo il “poco”, che non è miseria. È libertà.<br>
+<em>(Francesco si alza, resta seduto, guarda gli altri.)</em> Non devo convincere nessuno. Non ho ricette, né dogmi. Sono soltanto… un uomo che prova a vivere con leggerezza. Con verità. Con amore.<br>
+<em>(Silenzio. Il coro si raduna attorno a lui, più calmo. La frenesia si spegne. Si crea uno spazio vuoto, pulito.)</em></p>
+
+<p><strong>VOCE NARRANTE</strong>: E così comincia il nostro viaggio. Con un ragazzo qualsiasi, che sceglie di non correre, in un mondo che non sa più fermarsi.<br>
+<em>(Luci sfumano.)</em></p>
+
+<br> 
+<br> 
+
+<p><strong>QUADRO 1: Frate Sole – l’influencer buono</strong><br>
+<em>(Un ragazzo entra correndo con il cellulare in mano. Fa selfie in tutte le direzioni. Ogni volta che scatta, parte un FLASH breve. Sorride esageratamente, cambia pose, fa cuoricini con le dita.)</em></p>
+
+<p><strong>CORO</strong> (mormorio ritmato, quasi un beat)<br>
+Like.<br>
+Scrolla.<br>
+Condividi.<br>
+Ancora.<br>
+Ancora.</p>
+
+<p><strong>INFLUENCER</strong> (senza nome, sorriso tirato, voce energica): Ciao ragazzi!<br>
+Nuovo vlog!<br>
+Oggi vi faccio vedere la mia vita perfetta!<br>
+Guardate che luce!<br>
+Che stile!<br>
+Che successo!<br>
+<em>(Altro selfie – FLASH)</em></p>
+
+<p><strong>VOCE NARRANTE</strong> (lieve, quasi poetica): Ma nessuno vedeva che,<br>
+dopo ogni flash…<br>
+arrivava un piccolo buio.<br>
+<em>(Il ragazzo abbassa il telefono per un istante: il suo sorriso cade. È stanco, vuoto. Poi riprende a sorridere forzatamente.)</em></p>
+
+<p><strong>INFLUENCER</strong>: Devo postare…<br>
+Devo crescere…<br>
+Devo essere qualcuno…<br>
+Perché senza like…<br>
+senza questa luce…<br>
+io non sono niente.<br>
+<em>(FLASH. Ma stavolta lui chiude gli occhi: il flash gli fa male.)</em></p>
+
+<p><em>(Entra Francesco)</em><br>
+<strong>FRANCESCO</strong> (calmo, fermo): Perché ti nascondi dietro tutta questa luce?<br>
+<strong>INFLUENCER</strong> (Il ragazzo sobbalza): Io? Nascondermi??<br>
+Ma guarda!<br>
+Io risplendo!<br>
+Sono famoso!<br>
+Tutti mi seguono!<br>
+<strong>FRANCESCO</strong> (gentile): Eppure…<br>
+tu non guardi mai nessuno negli occhi.<br>
+<em>(Silenzio. Il ragazzo abbassa lentamente il telefono.)</em></p>
+
+<p><strong>FRANCESCO</strong>: Perché sei triste?<br>
+<strong>INFLUENCER</strong> (quasi sussurrando): Perché…<br>
+nessuno mi vede davvero.<br>
+Mi vedono…<br>
+ma non mi guardano.<br>
+Ho tutto…<br>
+ma non ho nessuno.<br>
+Mi manca…<br>
+mi manca l’amore.<br>
+<strong>FRANCESCO</strong>: E cosa vorresti?<br>
+<strong>INFLUENCER</strong>: Vorrei…<br>
+che la mia luce servisse.<br>
+Non solo per farmi vedere…<br>
+ma per illuminare qualcuno.<br>
+<strong>FRANCESCO</strong> (sorridendo, toccandogli la mano): Allora vieni.<br>
+Smetti di inseguire la tua luce.<br>
+E aiutami a portare luce agli altri.<br>
+<em>(Gli prende il telefono. Lo spegne dolcemente.)</em><br>
+Da oggi…<br>
+ti chiamerò Frate Sole.<br>
+Perché la tua luce…<br>
+non viene dal flash.<br>
+Viene da qui. <em>(toccandogli il petto)</em></p>
+
+<p><em>(I due vengono illuminati da una luce dorata mentre il coro recita un verso del laudato si. I due escono insieme)</em><br>
+<strong>CORO</strong> (suono caldo, tutti insieme)<br>
+1^ versione «Laudato si’, mi’ Signore, cum tucte le tue creature,<br>
+spetialmente messor lo frate Sole,<br>
+lo qual è iorno, et allumini noi per lui.»<br>
+2^ versione «Laudato si’, mi’ Signore,<br>
+per frate Sole,<br>
+che allumina il giorno<br>
+e rischiara i nostri passi.»</p>
+
+<br>
+<br>
+<br>
+
+<p><strong>QUADRO 2 – Sora Luna (ragazza poetessa)</strong><br>
+Luci soffuse, toni freddi/blu. Al centro o leggermente a lato, Sora Luna è seduta con quaderno e penna, assorta, guarda<br>
+il cielo o una luce simbolica sopra di lei.</p>
+
+<p><strong>NARRATRICE:</strong><br>
+Seduta in disparte,<br>
+lascia che il cielo le entri nel cuore.<br>
+Ogni parola che scrive<br>
+è un passo dentro se stessa:<br>
+fragile, ma piena di sogni.<br>
+Non cerca applausi,<br>
+cerca una luce che la guidi.<br>
+E tu, luna,<br>
+con la tua luce povera e riflessa,<br>
+sai rischiarare ciò che il giorno non vede<br>
+e far brillare gli occhi dei sognatori.<br>
+Molti ti hanno guardata,<br>
+molti ti hanno amata:<br>
+Leopardi ti chiamava placida regina,<br>
+D’Annunzio ti vedeva compagna dei silenzi,<br>
+e Branduardi parla di te<br>
+come di una presenza luminosa e ambigua,<br>
+capace di affascinare e confondere.<br>
+E lei, sotto il tuo chiarore,<br>
+scrive in silenzio:<br>
+una voce lieve,<br>
+una luce povera che diventa ricchezza<br>
+quando qualcuno la guarda.</p> 
+
+<br>
+
+<p><strong>SORA LUNA</strong><br>
+<em>(recita, voce lenta e intensa, seduta leggermente curva in avanti, come se proteggesse il quaderno e le<br>
+parole dentro di sé. Gesti con le mani delicati, che accompagnano la poesia. Carezza del quaderno o della penna<br>
+mentre parla, come a toccare i propri pensieri. Mani che si intrecciano o sfiorano il viso quando descrive emozioni<br>
+forti paura, desiderio, amore. Sguardo verso il cielo o lontano, spesso assente dal mondo intorno, simbolo della sua<br>
+interiorità e dei sogni. Respiro profondo, lento, che si percepisce come ritmo della sua mente e dei suoi sentimenti.)</em><br>
+<br>
+BRANO LA LUNA BRANDUARDI<br>
+Ho voglia di ammalarmi di te…<br>
+Come luce in tempesta. Brucia.<br>
+<em>(dopo BRUCIA, pausa breve, mani sul petto, occhi chiusi o sguardo basso,<br>
+respiro profondo)</em><br>
+<em>(leggero piegamento in avanti, mani che sfiorano il quaderno come protezione.)</em><br>
+Una voragine mi toglie il<br>
+respiro.<br>
+<em>(dopo “respiro.” per far sentire la sofferenza trattenuta.)</em><br>
+Un pensiero mi assale circonciso.<br>
+Un tale mi sussurra con lieve sospiro:<br>
+<em>(testa bassa, occhi chiusi, mani che si intrecciano, tremolio leggero se naturale)</em><br>
+Ahimè dolente cor mio, che io<br>
+Sola va bramando te. Brucia.<br>
+O cor mio arrossa in presenza di te.<br>
+Tieni stretto il mio malanno.<br>
+Con chiave per cor mio e tuo.<br>
+Occhi intrepidi con sol nell’animo.<br>
+Cor che mi sussulta in mal tuo.<br>
+<em>(mani aperte davanti al petto, leggero inchino del capo, occhi chiusi).</em><br>
+Fa ch’io muoia con sorriso tuo.<br>
+<em>(Pausa<br>
+dopo la frase per dare tempo al pubblico di percepire la profondità del sentimento.)</em><br>
+Fa tu deformare quest’amma in me<br>
+che ustiona ogni mio fievole respiro.<br>
+Che io non sappia nuotare.<br>
+<em>(inclinazione del corpo in avanti, mani che si lasciano cadere lentamente,<br>
+respirazione enfatizzata).</em><br>
+Permettimi<br>
+di perder lentamente il respiro mio.<br>
+Dimenticami nel tuo piacevole sospiro.<br>
+<em>(mani che si stringono al cuore, occhi chiusi)</em><br>
+Con odio e amor, voglio ammalarmi di te.<br>
+<em>(pausa)</em><br>
+Asseconda ogni mia voglia. Permettimi<br>
+di diventare la tua ancora di salvataggio.<br>
+Lascia che io sia la sola a cui darai<br>
+Il tuo malanno. Lascia che io trasformi<br>
+le sofferenze tue in gioia e amore.<br>
+Lascia il cor tuo custodito in me.</p>
+
+<p><em>(Piccola pausa. Francesco entra, si avvicina lentamente senza interromperla, osserva il quaderno.)</em></p>
+
+<p><strong>FRANCESCO</strong> <em>(voce calma, sorridendo leggermente):</em><br>
+Che scrivi qui? Cos’è che ti prende così tanto il cuore?</p>
+
+<p><strong>SORA LUNA</strong> <em>(alzando lo sguardo, leggermente imbarazzata ma sincera):</em><br>
+Parlo… di qualcuno.<br>
+Di ciò che sento dentro.<br>
+Non so se è gioia o tormento…</p>
+
+<p><strong>FRANCESCO</strong> <em>(annuisce, ascolta con attenzione):</em><br>
+Vedo un cuore che brilla, anche nel dolore…<br>
+E come la luna illumina la notte, così le tue parole illuminano ciò che ti circonda.<br>
+Da oggi ti chiamerò Sora Luna,</p>
+
+<p><strong>SORA LUNA</strong> <em>(sorridendo timidamente, un po’ sorpresa):</em><br>
+Sora Luna…</p>
+
+<p><strong>FRANCESCO</strong><br>
+sì…. perché porti luce dove c’è buio e sogni dove altri non vedono.</p>
+
+<p><strong>SORA LUNA</strong><br>
+Mi piace…</p>
+
+<p><strong>FRANCESCO</strong>: Continua a scrivere… e lascia che il tuo cuore parli al mondo.</p>
+
+<p><em>(Piccola pausa poetica. Luci sfumano lentamente, la scena si chiude.)</em></p>
+
+<p><strong>CORO:</strong><br>
+Laudato si’, mi’ Signore, per sora Luna e le stelle:<br>
+in celu l’ài formate clarite et pretiose et belle.</p>
+
+<br>
+<br>
+<br>
+
+
+<p><strong>QUADRO 3 – Sorelle Stelle:</strong><br>
+Le Stelle entrano in silenzio, ciascuna con un libro, un quaderno, appunti stampati. Si muovono lentamente, come un<br>
+firmamento che prende vita. Parlano tra loro e al pubblico, raccontando ciò che hanno scoperto studiando Buddha e<br>
+San Francesco. Il Francesco moderno entra e si siede ai margini, non protagonista. Ascolta in silenzio, come spettatore<br>
+privilegiato</p>
+
+<p><strong>STELLA 1</strong> <em>(guardando il proprio libro, stupita):</em><br>
+Più leggo… più mi sembra incredibile.<br>
+Due storie distanti…<br>
+due mondi lontani…<br>
+che però parlano la stessa lingua.</p>
+
+<p><strong>STELLA 2</strong> <em>(indicando le sue pagine):</em><br>
+Abbiamo studiato Siddhartha,<br>
+il giovane che divenne Buddha.<br>
+Un principe soffocato nell’abbondanza<br>
+che lasciò tutto per cercare la verità.</p>
+
+<p><strong>STELLA 1</strong> <em>(aprendo il proprio quaderno):</em><br>
+E poi abbiamo letto di un altro giovane…<br>
+questa volta ad Assisi.<br>
+Un ragazzo ricco, vivace, pieno di sogni…<br>
+che un giorno sentì un richiamo<br>
+più forte del denaro<br>
+e lasciò tutto.</p>
+
+<p><strong>STELLA 2:</strong><br>
+Siddhartha vide il dolore del mondo<br>
+e non poté più voltarsi dall’altra parte.</p>
+
+<p><strong>STELLA 1:</strong><br>
+Francesco vide la sofferenza dei poveri<br>
+e non poté più vivere come prima.</p>
+
+<p><strong>STELLA 2:</strong><br>
+Entrambi figli amati.<br>
+Entrambi destinati a una vita comoda.<br>
+Entrambi… in cammino verso qualcos’altro.</p>
+
+<p><strong>STELLA 1:</strong><br>
+Le nostre letture non dicono<br>
+che fossero identici.<br>
+No.<br>
+Ognuno seguì il proprio sentiero.</p>
+
+<p><strong>STELLA 2:</strong><br>
+Ma nessuno dei due<br>
+volle imporre la sua strada agli altri.</p>
+
+<p><strong>STELLA 1:</strong><br>
+Entrambi cercavano solo<br>
+un modo per vivere bene,<br>
+in pace,<br>
+con rispetto per ogni creatura.</p>
+
+<p><strong>STELLA 2:</strong><br>
+Nel Dharma abbiamo letto:<br>
+“Non fare male a nessun essere vivente.”</p>
+
+<p><strong>STELLA 1:</strong><br>
+E nella vita di Francesco:<br>
+“Chi ama la creatura, ama il Creatore.”</p>
+
+<p><strong>STELLA 2:</strong><br>
+Due frasi diverse.<br>
+Due mondi diversi.<br>
+Stessa luce.</p>
+
+<p><em>(Le ragazze sollevano i libri verso l’alto, come fossero stelle che brillano.)</em></p>
+
+<p><strong>STELLA 1:</strong><br>
+Abbiamo scoperto<br>
+che la bontà non ha religione.</p>
+
+<p><strong>STELLA 2:</strong><br>
+Che la compassione non ha passaporto.</p>
+
+<p><strong>STELLA 1:</strong><br>
+Che la saggezza non appartiene a una sola via.</p>
+
+<p><strong>STELLA 2:</strong><br>
+Abbiamo scoperto<br>
+che gli uomini possono incontrarsi<br>
+anche senza assomigliarsi.</p>
+
+<p><strong>STELLA 1:</strong><br>
+Possono rispettarsi<br>
+senza convincersi.</p>
+
+<p><strong>STELLA 2:</strong><br>
+Possono brillare<br>
+senza oscurare l’altro.</p>
+
+<p>Le luci si alzano, il cielo si illumina.</p>
+
+
+<br>
+<br>
+<br>
+
+<p><strong>QUADRO 4 – Frate Vento</strong><br>
+<em>(Le Stelle sono ancora in scena, con i loro libri al petto. La luce si muove lentamente, come se l’aria stesse cambiando.<br>
+Da un lato entra Sorella Vento, Amira, senza clamore: porta uno zaino leggero, qualche foglio, magari un piccolo taccuino. Avanza come chi ascolta prima di parlare. Una brezza leggera attraversa lo spazio.)</em></p>
+
+<p><strong>AMIRA</strong> <em>(sorridendo, al pubblico e alle Stelle):</em><br>
+Scusate se arrivo ora.<br>
+Ho sentito le vostre parole<br>
+e mi sono fermata a… respirarle.<br>
+A volte basta un soffio<br>
+per capire che non siamo soli.<br>
+<em>(con semplicità)</em> scusate, non mi sono presentata.<br>
+Mi chiamo Amira.<br>
+Vengo da un’altra storia,<br>
+un altro orizzonte,<br>
+ma la stessa sete.<br>
+Nella mia fede si dice:<br>
+«Dio ha fatto di voi popoli e tribù<br>
+perché vi conosceste,<br>
+non per separarvi.»<br>
+<em>(sollevando il taccuino)</em><br>
+qui ci appunto le cose che il vento mi insegna.<br>
+Perché il vento…<br>
+non ha confini, non ha padroni,<br>
+non chiede permesso.<br>
+Passa, tocca, scuote.<br>
+E poi riparte.<br>
+Ed ho imparato, che:<br>
+la libertà è un dono<br>
+ma anche una responsabilità.<br>
+Che lo spirito non è aria ferma:<br>
+si muove, respira, accende.<br>
+Che se qualcosa non va<br>
+non possiamo restare immobili<br>
+come foglie bagnate.<br>
+Il mondo è casa nostra.</p>
+
+<p><em>(Francesco ascolta da un angolo. Fa un passo avanti, ma non interrompe, Amira rivolgendosi alle stelle.)</em></p>
+
+<p><strong>AMIRA</strong>:<br>
+Io non porto verità.<br>
+Porto un invito.<br>
+A guardare più lontano,<br>
+a proteggere ciò che respira,<br>
+a non aver paura di cambiare.<br>
+<em>(con dolcezza)</em>:<br>
+Ogni fede<br>
+ha la sua musica. E oggi…<br>
+tutte suonano insieme.</p>
+
+<p><em>(Un momento di silenzio. Francesco moderno si avvicina, emozionato.)</em></p>
+
+<p><strong>FRANCESCO</strong>:<br>
+Vi ho ascoltati.<br>
+Tutti.<br>
+Ognuno diverso.<br>
+Ognuno prezioso.<br>
+E mi accorgo che…<br>
+non siete solo compagni di viaggio.<br>
+Siete più di questo.<br>
+Voi, che cercate la verità nella gentilezza…<br>
+e illuminate senza pretendere…<br>
+sarete, Sorelle Stelle.<br>
+E tu <em>(guardando Amira)</em><br>
+che arrivi come aria nuova<br>
+e ci ricordi che lo spirito è movimento…<br>
+sei Frate Vento della Libertà.</p>
+
+<p><em>(Amira abbassa il capo, grata. Le Stelle sorridono. Nessun tono religioso esclusivo: solo riconoscimento.)</em></p>
+
+<p><strong>FRANCESCO</strong> <em>(piano)</em>:<br>
+Se vi va…<br>
+camminiamo insieme.<br>
+Non per diventare uguali,<br>
+ma per rispettare le differenze<br>
+come si rispettano i venti<br>
+e le stelle.</p>
+
+<p><em>(Una luce attraversa la scena come un soffio. Il quadro si chiude con i quattro giovani uniti: non simili, ma vicini.)</em></p>
+
+<p><strong>CORO</strong>:<br>
+«Laudato si’, mi’ Signore,<br>
+per sora Luna e le stelle,<br>
+in celu l’ài formate<br>
+clarite et pretiose et belle.<br>
+E per Frate Vento,<br>
+et per aere et nubilo<br>
+et sereno et onne tempo,<br>
+per lo quale a le tue creature dài sostentamento.»</p>
+
+
+
+ </div>
+
+
+    <div class="battuta" data-personaggio="Frate Sole"> <p><strong>QUADRO 1: Frate Sole – l’influencer buono</strong><br><br>
+<em>(Un ragazzo entra correndo con il cellulare in mano. Fa selfie in tutte le direzioni. Ogni volta che scatta, parte un FLASH breve. Sorride esageratamente, cambia pose, fa cuoricini con le dita.)</em></p>
+
+<p><strong>CORO</strong> (mormorio ritmato, quasi un beat)<br>
+Like.<br>
+Scrolla.<br>
+Condividi.<br>
+Ancora.<br>
+Ancora.</p>
+
+<p><strong>INFLUENCER</strong> (senza nome, sorriso tirato, voce energica): Ciao ragazzi!<br>
+Nuovo vlog!<br>
+Oggi vi faccio vedere la mia vita perfetta!<br>
+Guardate che luce!<br>
+Che stile!<br>
+Che successo!<br>
+<em>(Altro selfie – FLASH)</em></p>
+
+<p><strong>VOCE NARRANTE</strong> (lieve, quasi poetica): Ma nessuno vedeva che,<br>
+dopo ogni flash…<br>
+arrivava un piccolo buio.<br>
+<em>(Il ragazzo abbassa il telefono per un istante: il suo sorriso cade. È stanco, vuoto. Poi riprende a sorridere forzatamente.)</em></p>
+
+<p><strong>INFLUENCER</strong>: Devo postare…<br>
+Devo crescere…<br>
+Devo essere qualcuno…<br>
+Perché senza like…<br>
+senza questa luce…<br>
+io non sono niente.<br>
+<em>(FLASH. Ma stavolta lui chiude gli occhi: il flash gli fa male.)</em></p>
+
+<p><em>(Entra Francesco)</em><br>
+<strong>FRANCESCO</strong> (calmo, fermo): Perché ti nascondi dietro tutta questa luce?<br>
+<strong>INFLUENCER</strong> (Il ragazzo sobbalza): Io? Nascondermi??<br>
+Ma guarda!<br>
+Io risplendo!<br>
+Sono famoso!<br>
+Tutti mi seguono!<br>
+<strong>FRANCESCO</strong> (gentile): Eppure…<br>
+tu non guardi mai nessuno negli occhi.<br>
+<em>(Silenzio. Il ragazzo abbassa lentamente il telefono.)</em></p>
+
+<p><strong>FRANCESCO</strong>: Perché sei triste?<br>
+<strong>INFLUENCER</strong> (quasi sussurrando): Perché…<br>
+nessuno mi vede davvero.<br>
+Mi vedono…<br>
+ma non mi guardano.<br>
+Ho tutto…<br>
+ma non ho nessuno.<br>
+Mi manca…<br>
+mi manca l’amore.<br>
+<strong>FRANCESCO</strong>: E cosa vorresti?<br>
+<strong>INFLUENCER</strong>: Vorrei…<br>
+che la mia luce servisse.<br>
+Non solo per farmi vedere…<br>
+ma per illuminare qualcuno.<br>
+<strong>FRANCESCO</strong> (sorridendo, toccandogli la mano): Allora vieni.<br>
+Smetti di inseguire la tua luce.<br>
+E aiutami a portare luce agli altri.<br>
+<em>(Gli prende il telefono. Lo spegne dolcemente.)</em><br>
+Da oggi…<br>
+ti chiamerò Frate Sole.<br>
+Perché la tua luce…<br>
+non viene dal flash.<br>
+Viene da qui. <em>(toccandogli il petto)</em></p>
+
+<p><em>(I due vengono illuminati da una luce dorata mentre il coro recita un verso del laudato si. I due escono insieme)</em><br>
+<strong>CORO</strong> (suono caldo, tutti insieme)<br>
+1^ versione «Laudato si’, mi’ Signore, cum tucte le tue creature,<br>
+spetialmente messor lo frate Sole,<br>
+lo qual è iorno, et allumini noi per lui.»<br>
+2^ versione «Laudato si’, mi’ Signore,<br>
+per frate Sole,<br>
+che allumina il giorno<br>
+e rischiara i nostri passi.»</p>
+</div>
+
+
+    <div class="battuta" data-personaggio="Sora Luna"> <p><strong>QUADRO 2 – Sora Luna (ragazza poetessa)</strong><br>
+Luci soffuse, toni freddi/blu. Al centro o leggermente a lato, Sora Luna è seduta con quaderno e penna, assorta, guarda<br>
+il cielo o una luce simbolica sopra di lei.</p>
+
+<p><strong>NARRATRICE:</strong><br>
+Seduta in disparte,<br>
+lascia che il cielo le entri nel cuore.<br>
+Ogni parola che scrive<br>
+è un passo dentro se stessa:<br>
+fragile, ma piena di sogni.<br>
+Non cerca applausi,<br>
+cerca una luce che la guidi.<br>
+E tu, luna,<br>
+con la tua luce povera e riflessa,<br>
+sai rischiarare ciò che il giorno non vede<br>
+e far brillare gli occhi dei sognatori.<br>
+Molti ti hanno guardata,<br>
+molti ti hanno amata:<br>
+Leopardi ti chiamava placida regina,<br>
+D’Annunzio ti vedeva compagna dei silenzi,<br>
+e Branduardi parla di te<br>
+come di una presenza luminosa e ambigua,<br>
+capace di affascinare e confondere.<br>
+E lei, sotto il tuo chiarore,<br>
+scrive in silenzio:<br>
+una voce lieve,<br>
+una luce povera che diventa ricchezza<br>
+quando qualcuno la guarda.</p>
+
+<br>
+
+<p><strong>SORA LUNA</strong><br>
+<em>(recita, voce lenta e intensa, seduta leggermente curva in avanti, come se proteggesse il quaderno e le<br>
+parole dentro di sé. Gesti con le mani delicati, che accompagnano la poesia. Carezza del quaderno o della penna<br>
+mentre parla, come a toccare i propri pensieri. Mani che si intrecciano o sfiorano il viso quando descrive emozioni<br>
+forti paura, desiderio, amore. Sguardo verso il cielo o lontano, spesso assente dal mondo intorno, simbolo della sua<br>
+interiorità e dei sogni. Respiro profondo, lento, che si percepisce come ritmo della sua mente e dei suoi sentimenti.)</em><br>
+<br>
+BRANO LA LUNA BRANDUARDI<br>
+Ho voglia di ammalarmi di te…<br>
+Come luce in tempesta. Brucia.<br>
+<em>(dopo BRUCIA, pausa breve, mani sul petto, occhi chiusi o sguardo basso,<br>
+respiro profondo)</em><br>
+<em>(leggero piegamento in avanti, mani che sfiorano il quaderno come protezione.)</em><br>
+Una voragine mi toglie il<br>
+respiro.<br>
+<em>(dopo “respiro.” per far sentire la sofferenza trattenuta.)</em><br>
+Un pensiero mi assale circonciso.<br>
+Un tale mi sussurra con lieve sospiro:<br>
+<em>(testa bassa, occhi chiusi, mani che si intrecciano, tremolio leggero se naturale)</em><br>
+Ahimè dolente cor mio, che io<br>
+Sola va bramando te. Brucia.<br>
+O cor mio arrossa in presenza di te.<br>
+Tieni stretto il mio malanno.<br>
+Con chiave per cor mio e tuo.<br>
+Occhi intrepidi con sol nell’animo.<br>
+Cor che mi sussulta in mal tuo.<br>
+<em>(mani aperte davanti al petto, leggero inchino del capo, occhi chiusi).</em><br>
+Fa ch’io muoia con sorriso tuo.<br>
+<em>(Pausa<br>
+dopo la frase per dare tempo al pubblico di percepire la profondità del sentimento.)</em><br>
+Fa tu deformare quest’amma in me<br>
+che ustiona ogni mio fievole respiro.<br>
+Che io non sappia nuotare.<br>
+<em>(inclinazione del corpo in avanti, mani che si lasciano cadere lentamente,<br>
+respirazione enfatizzata).</em><br>
+Permettimi<br>
+di perder lentamente il respiro mio.<br>
+Dimenticami nel tuo piacevole sospiro.<br>
+<em>(mani che si stringono al cuore, occhi chiusi)</em><br>
+Con odio e amor, voglio ammalarmi di te.<br>
+<em>(pausa)</em><br>
+Asseconda ogni mia voglia. Permettimi<br>
+di diventare la tua ancora di salvataggio.<br>
+Lascia che io sia la sola a cui darai<br>
+Il tuo malanno. Lascia che io trasformi<br>
+le sofferenze tue in gioia e amore.<br>
+Lascia il cor tuo custodito in me.</p>
+
+<p><em>(Piccola pausa. Francesco entra, si avvicina lentamente senza interromperla, osserva il quaderno.)</em></p>
+
+<p><strong>FRANCESCO</strong> <em>(voce calma, sorridendo leggermente):</em><br>
+Che scrivi qui? Cos’è che ti prende così tanto il cuore?</p>
+
+<p><strong>SORA LUNA</strong> <em>(alzando lo sguardo, leggermente imbarazzata ma sincera):</em><br>
+Parlo… di qualcuno.<br>
+Di ciò che sento dentro.<br>
+Non so se è gioia o tormento…</p>
+
+<p><strong>FRANCESCO</strong> <em>(annuisce, ascolta con attenzione):</em><br>
+Vedo un cuore che brilla, anche nel dolore…<br>
+E come la luna illumina la notte, così le tue parole illuminano ciò che ti circonda.<br>
+Da oggi ti chiamerò Sora Luna,</p>
+
+<p><strong>SORA LUNA</strong> <em>(sorridendo timidamente, un po’ sorpresa):</em><br>
+Sora Luna…</p>
+
+<p><strong>FRANCESCO</strong><br>
+sì…. perché porti luce dove c’è buio e sogni dove altri non vedono.</p>
+
+<p><strong>SORA LUNA</strong><br>
+Mi piace…</p>
+
+<p><strong>FRANCESCO</strong>: Continua a scrivere… e lascia che il tuo cuore parli al mondo.</p>
+
+<p><em>(Piccola pausa poetica. Luci sfumano lentamente, la scena si chiude.)</em></p>
+
+<p><strong>CORO:</strong><br>
+Laudato si’, mi’ Signore, per sora Luna e le stelle:<br>
+in celu l’ài formate clarite et pretiose et belle.</p>
+</div>
+
+
+    <div class="battuta" data-personaggio="Sorelle Stelle"> <p><strong>QUADRO 3 – Sorelle Stelle:</strong><br>
+Le Stelle entrano in silenzio, ciascuna con un libro, un quaderno, appunti stampati. Si muovono lentamente, come un<br>
+firmamento che prende vita. Parlano tra loro e al pubblico, raccontando ciò che hanno scoperto studiando Buddha e<br>
+San Francesco. Il Francesco moderno entra e si siede ai margini, non protagonista. Ascolta in silenzio, come spettatore<br>
+privilegiato</p>
+
+<p><strong>STELLA 1</strong> <em>(guardando il proprio libro, stupita):</em><br>
+Più leggo… più mi sembra incredibile.<br>
+Due storie distanti…<br>
+due mondi lontani…<br>
+che però parlano la stessa lingua.</p>
+
+<p><strong>STELLA 2</strong> <em>(indicando le sue pagine):</em><br>
+Abbiamo studiato Siddhartha,<br>
+il giovane che divenne Buddha.<br>
+Un principe soffocato nell’abbondanza<br>
+che lasciò tutto per cercare la verità.</p>
+
+<p><strong>STELLA 1</strong> <em>(aprendo il proprio quaderno):</em><br>
+E poi abbiamo letto di un altro giovane…<br>
+questa volta ad Assisi.<br>
+Un ragazzo ricco, vivace, pieno di sogni…<br>
+che un giorno sentì un richiamo<br>
+più forte del denaro<br>
+e lasciò tutto.</p>
+
+<p><strong>STELLA 2:</strong><br>
+Siddhartha vide il dolore del mondo<br>
+e non poté più voltarsi dall’altra parte.</p>
+
+<p><strong>STELLA 1:</strong><br>
+Francesco vide la sofferenza dei poveri<br>
+e non poté più vivere come prima.</p>
+
+<p><strong>STELLA 2:</strong><br>
+Entrambi figli amati.<br>
+Entrambi destinati a una vita comoda.<br>
+Entrambi… in cammino verso qualcos’altro.</p>
+
+<p><strong>STELLA 1:</strong><br>
+Le nostre letture non dicono<br>
+che fossero identici.<br>
+No.<br>
+Ognuno seguì il proprio sentiero.</p>
+
+<p><strong>STELLA 2:</strong><br>
+Ma nessuno dei due<br>
+volle imporre la sua strada agli altri.</p>
+
+<p><strong>STELLA 1:</strong><br>
+Entrambi cercavano solo<br>
+un modo per vivere bene,<br>
+in pace,<br>
+con rispetto per ogni creatura.</p>
+
+<p><strong>STELLA 2:</strong><br>
+Nel Dharma abbiamo letto:<br>
+“Non fare male a nessun essere vivente.”</p>
+
+<p><strong>STELLA 1:</strong><br>
+E nella vita di Francesco:<br>
+“Chi ama la creatura, ama il Creatore.”</p>
+
+<p><strong>STELLA 2:</strong><br>
+Due frasi diverse.<br>
+Due mondi diversi.<br>
+Stessa luce.</p>
+
+<p><em>(Le ragazze sollevano i libri verso l’alto, come fossero stelle che brillano.)</em></p>
+
+<p><strong>STELLA 1:</strong><br>
+Abbiamo scoperto<br>
+che la bontà non ha religione.</p>
+
+<p><strong>STELLA 2:</strong><br>
+Che la compassione non ha passaporto.</p>
+
+<p><strong>STELLA 1:</strong><br>
+Che la saggezza non appartiene a una sola via.</p>
+
+<p><strong>STELLA 2:</strong><br>
+Abbiamo scoperto<br>
+che gli uomini possono incontrarsi<br>
+anche senza assomigliarsi.</p>
+
+<p><strong>STELLA 1:</strong><br>
+Possono rispettarsi<br>
+senza convincersi.</p>
+
+<p><strong>STELLA 2:</strong><br>
+Possono brillare<br>
+senza oscurare l’altro.</p>
+
+<p>Le luci si alzano, il cielo si illumina.</p>
+ </div>
+
+
+
+    <div class="battuta" data-personaggio="Sorella Vento"> <p><strong>QUADRO 4 – Frate Vento</strong><br>
+<em>(Le Stelle sono ancora in scena, con i loro libri al petto. La luce si muove lentamente, come se l’aria stesse cambiando.<br>
+Da un lato entra Sorella Vento, Amira, senza clamore: porta uno zaino leggero, qualche foglio, magari un piccolo taccuino. Avanza come chi ascolta prima di parlare. Una brezza leggera attraversa lo spazio.)</em></p>
+
+<p><strong>AMIRA</strong> <em>(sorridendo, al pubblico e alle Stelle):</em><br>
+Scusate se arrivo ora.<br>
+Ho sentito le vostre parole<br>
+e mi sono fermata a… respirarle.<br>
+A volte basta un soffio<br>
+per capire che non siamo soli.<br>
+<em>(con semplicità)</em> scusate, non mi sono presentata.<br>
+Mi chiamo Amira.<br>
+Vengo da un’altra storia,<br>
+un altro orizzonte,<br>
+ma la stessa sete.<br>
+Nella mia fede si dice:<br>
+«Dio ha fatto di voi popoli e tribù<br>
+perché vi conosceste,<br>
+non per separarvi.»<br>
+<em>(sollevando il taccuino)</em><br>
+qui ci appunto le cose che il vento mi insegna.<br>
+Perché il vento…<br>
+non ha confini, non ha padroni,<br>
+non chiede permesso.<br>
+Passa, tocca, scuote.<br>
+E poi riparte.<br>
+Ed ho imparato, che:<br>
+la libertà è un dono<br>
+ma anche una responsabilità.<br>
+Che lo spirito non è aria ferma:<br>
+si muove, respira, accende.<br>
+Che se qualcosa non va<br>
+non possiamo restare immobili<br>
+come foglie bagnate.<br>
+Il mondo è casa nostra.</p>
+
+<p><em>(Francesco ascolta da un angolo. Fa un passo avanti, ma non interrompe, Amira rivolgendosi alle stelle.)</em></p>
+
+<p><strong>AMIRA</strong>:<br>
+Io non porto verità.<br>
+Porto un invito.<br>
+A guardare più lontano,<br>
+a proteggere ciò che respira,<br>
+a non aver paura di cambiare.<br>
+<em>(con dolcezza)</em>:<br>
+Ogni fede<br>
+ha la sua musica. E oggi…<br>
+tutte suonano insieme.</p>
+
+<p><em>(Un momento di silenzio. Francesco moderno si avvicina, emozionato.)</em></p>
+
+<p><strong>FRANCESCO</strong>:<br>
+Vi ho ascoltati.<br>
+Tutti.<br>
+Ognuno diverso.<br>
+Ognuno prezioso.<br>
+E mi accorgo che…<br>
+non siete solo compagni di viaggio.<br>
+Siete più di questo.<br>
+Voi, che cercate la verità nella gentilezza…<br>
+e illuminate senza pretendere…<br>
+sarete, Sorelle Stelle.<br>
+E tu <em>(guardando Amira)</em><br>
+che arrivi come aria nuova<br>
+e ci ricordi che lo spirito è movimento…<br>
+sei Frate Vento della Libertà.</p>
+
+<p><em>(Amira abbassa il capo, grata. Le Stelle sorridono. Nessun tono religioso esclusivo: solo riconoscimento.)</em></p>
+
+<p><strong>FRANCESCO</strong> <em>(piano)</em>:<br>
+Se vi va…<br>
+camminiamo insieme.<br>
+Non per diventare uguali,<br>
+ma per rispettare le differenze<br>
+come si rispettano i venti<br>
+e le stelle.</p>
+
+<p><em>(Una luce attraversa la scena come un soffio. Il quadro si chiude con i quattro giovani uniti: non simili, ma vicini.)</em></p>
+
+<p><strong>CORO</strong>:<br>
+«Laudato si’, mi’ Signore,<br>
+per sora Luna e le stelle,<br>
+in celu l’ài formate<br>
+clarite et pretiose et belle.<br>
+E per Frate Vento,<br>
+et per aere et nubilo<br>
+et sereno et onne tempo,<br>
+per lo quale a le tue creature dài sostentamento.»</p>
+</div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const sel = document.getElementById("personaggioSelect");
+    const battute = document.querySelectorAll(".battuta");
+
+    function update() {
+        const val = sel.value;
+        battute.forEach(b => {
+            if(val === "tutti" || b.dataset.personaggio === val){
+                b.style.display = "block";
+            } else {
+                b.style.display = "none";
+            }
+        });
+    }
+    sel.addEventListener("change", update);
+    update();
+});
+</script>
+<footer class="container">
+  <p>© Progetto Teatro — Creato dall'ingeniere </p>
+  <p>⊹₊ ˚‧︵‿₊୨୧₊‿︵‧ ˚ ₊⊹</p>
+
+  <!-- Pulsante per scaricare il copione -->
+  <p>
+    <a href="copione.pdf" download="copione.pdf" class="btn btn-primary">
+      Scarica il copione
+    </a>
+  </p>
+</footer>
+</body>
+</html>
