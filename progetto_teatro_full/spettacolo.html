@@ -1,0 +1,185 @@
+    <!doctype html>
+    <html lang="it">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Spettacolo — Progetto Teatro</title>
+      <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+      <meta name="description" content="Progetto teatrale scuola - sito ufficiale">
+      <style>
+:root{
+  --bg:#0f0f12;
+  --card:#fff;
+  --accent:#b52324;
+  --muted:#bdbdbd;
+  --glass: rgba(255,255,255,0.04);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:linear-gradient(180deg,#0c0c0f 0%, #101217 60%); color:var(--card); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;}
+.container{max-width:1100px;margin:32px auto;padding:24px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;backdrop-filter: blur(4px);}
+.header{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;}
+.brand{display:flex;align-items:center;gap:14px}
+.logo{width:52px;height:52px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#6b0f12);display:flex;align-items:center;justify-content:center;font-weight:700;box-shadow:0 6px 18px rgba(181,35,36,0.16)}
+.brand h1{font-size:1.3rem;color:var(--card)}
+.nav{display:flex;gap:12px;align-items:center}
+.nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:600}
+.nav a:hover{color:var(--card);background:var(--glass)}
+
+.hamburger{display:none;background:none;border:1px solid rgba(255,255,255,0.04);padding:8px;border-radius:8px;color:var(--card)}
+
+/* hero */
+.hero{padding:56px 24px;border-radius:12px;margin:18px 0;background:linear-gradient(180deg, rgba(181,35,36,0.12), rgba(0,0,0,0.18));box-shadow:0 8px 30px rgba(0,0,0,0.45);text-align:center;}
+.hero h2{font-size:2.2rem;margin-bottom:8px}
+.hero p{color:var(--muted);max-width:820px;margin:0 auto;line-height:1.6}
+
+/* grid */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:18px}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.5);transition:transform .25s ease, box-shadow .25s ease;cursor:pointer;border:1px solid rgba(255,255,255,0.03)}
+.card:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(0,0,0,0.6)}
+.card h3{color:var(--accent);margin-bottom:8px}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.gallery img{width:100%;height:140px;object-fit:cover;border-radius:10px;display:block;}
+
+/* footer */
+footer{padding:28px;text-align:center;color:var(--muted);margin-top:30px;border-top:1px solid rgba(255,255,255,0.02)}
+
+/* cards inside content */
+.content h2{color:var(--card);margin-bottom:12px}
+.content p, .content li{color:var(--muted);line-height:1.6}
+
+/* responsive navigation */
+@media (max-width:880px){
+  .nav{display:none}
+  .hamburger{display:block}
+  .mobile-menu{display:none;position:absolute;right:18px;top:72px;background:linear-gradient(180deg, rgba(15,15,18,0.98), rgba(20,20,25,0.98));border-radius:10px;padding:12px;box-shadow:0 8px 30px rgba(0,0,0,0.6);}
+  .mobile-menu a{display:block;padding:10px;color:var(--muted);text-decoration:none;border-radius:8px}
+  .mobile-menu a:hover{color:var(--card);background:var(--glass)}
+}
+
+/* subtle fade-in animations */
+.fade-up{opacity:0;transform:translateY(10px);animation:fadeUp .6s forwards}
+@keyframes fadeUp{to{opacity:1;transform:none}}
+
+/* small helpers */
+.kv{display:flex;gap:10px;align-items:center;color:var(--muted);font-weight:600}
+.btn{display:inline-block;padding:10px 14px;border-radius:8px;background:var(--accent);color:white;text-decoration:none;font-weight:700;margin-top:8px}
+.badge{background:rgba(255,255,255,0.04);padding:6px 10px;border-radius:999px;color:var(--muted);font-weight:700}
+</style>
+    </head>
+    <body>
+      <header class="header container" role="banner">
+        <div class="brand">
+          <div class="logo">PT</div>
+          <h1>Progetto Teatro</h1>
+        </div>
+        <nav class="nav" role="navigation" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="copione.html">Copione</a>
+          <a href="musiche.html">Musiche</a>
+          <a href="personaggi.html">Personaggi</a>
+          <a href="calendario.html">Calendario</a>
+          <a href="galleria.html">Galleria</a>
+          <a href="materiali.html">Materiali</a>
+          <a href="contatti.html">Contatti</a>
+        </nav>
+        <button id="hamb" class="hamburger" aria-label="Apri menu">☰</button>
+        <div id="mobileMenu" class="mobile-menu" style="display:none">
+          <a href="index.html">Home</a>
+          <a href="copione.html">Copione</a>
+          <a href="musiche.html">Musiche</a>
+          <a href="personaggi.html">Personaggi</a>
+          <a href="calendario.html">Calendario</a>
+          <a href="galleria.html">Galleria</a>
+          <a href="materiali.html">Materiali</a>
+          <a href="contatti.html">Contatti</a>
+        </div>
+      </header>
+
+      <main class="container content" role="main">
+
+<h2>Lo Spettacolo</h2>
+<p>Data: <strong>un giorno</strong></p>
+<p>Luogo: <strong>un luogo</strong></p>
+<section style="margin-top:12px" class="card">
+  <h3>Nome dello spettacolo (che ne so come si chiama)</h3>
+  <p> Il nostro spettacolo prende ispirazione dal <i>Cantico delle Creature</i> di San Francesco, ma non nasce con l’intenzione di riproporlo così com’è stato scritto. Nasce dal desiderio di <i>tradurlo nel nostro tempo</i>, nel linguaggio, nelle immagini e nelle ferite di una generazione che spesso si sente smarrita, giudicata o non ascoltata. Non è una riscrittura irrispettosa, ma un atto di fiducia: se un testo è davvero vivo, può cambiare forma senza perdere il suo cuore.</p>
+
+<br>
+
+<p>Per questo il nostro Francesco non è il santo delle statue o dei libri di storia. È un ragazzo semplice, uno qualunque. Non ha certezze assolute, non ha già trovato Dio, non ha risposte pronte. È uno che osserva il mondo intorno a sé e sente che qualcosa non funziona. Vive in una realtà dove il dolore è spesso normalizzato, dove la violenza è spettacolarizzata, dove il successo sembra valere più della dignità, e dove chi cade viene lasciato indietro. Francesco rappresenta il giovane che sente il bisogno di andare controcorrente, anche senza sapere bene come.</p>
+
+<br>
+
+<p>Il Cantico, nella nostra interpretazione, non è solo una lode a ciò che è bello. È anche un atto di resistenza. Lodare la vita oggi non è scontato. Significa scegliere di non diventare cinici, di non chiudersi, di non smettere di credere che l’essere umano possa essere migliore di ciò che spesso mostra. Francesco non canta perché tutto va bene, ma <i>nonostante</i> tutto vada male. E questo è un messaggio potentissimo per i giovani, che crescono in un mondo pieno di crisi: ambientali, sociali, emotive.</p>
+
+<br>
+
+<p>Le creature del Cantico diventano simboli della nostra quotidianità. Il sole non è solo la luce fisica, ma rappresenta ciò che ci dà energia: le passioni, i sogni, le persone che ci tengono in piedi quando tutto crolla. La luna e le stelle sono i momenti di silenzio, la solitudine, le notti in cui i pensieri fanno più rumore del giorno. Non sono nemiche, ma parti necessarie della crescita. Lo spettacolo non idealizza la felicità continua: riconosce che anche il buio ha un ruolo.</p>
+
+<br>
+
+<p>L’acqua, nel nostro spettacolo, è la fragilità. È ciò che può dissetare, ma anche ciò che può travolgere. Rappresenta le emozioni che spesso non sappiamo gestire: la tristezza, la rabbia, l’ansia, la paura di non essere abbastanza. In un mondo che chiede ai giovani di essere sempre forti, performanti e sorridenti, l’acqua ricorda che <i>essere fragili non è una colpa.</i> Francesco non scappa dalla fragilità, non la nasconde: la attraversa.</p>
+
+<br>
+
+<p>Il fuoco è l’impulso, l’istinto, il desiderio. Può scaldare, ma può anche bruciare. È l’energia che porta a ribellarsi, ad amare, a rischiare, ma anche a distruggere se non viene compresa. Nel nostro spettacolo il fuoco è la rabbia dei giovani che si sentono ignorati, giudicati, schiacciati da aspettative troppo grandi. Non viene condannato, ma ascoltato. Perché spesso dietro la rabbia c’è una richiesta d’aiuto che nessuno ha accolto.</p>
+
+<br>
+
+<p>La terra non è solo la natura, ma è anche il luogo da cui veniamo: la famiglia, il contesto sociale, le radici. Non tutti partono dallo stesso punto. C’è chi cresce circondato da opportunità e chi cresce tra mancanze, violenza o solitudine. Lo spettacolo vuole ricordare che non esistono percorsi uguali per tutti e che giudicare senza conoscere è una forma di ingiustizia. Francesco sceglie di abbassarsi, di stare a contatto con la terra, di sporcarsi le mani.</p>
+
+<br>
+
+<p>In questo mondo complesso appare il lupo, che non rappresenta solo il “male” in senso astratto, ma tutte quelle realtà che divorano le persone: la droga, lo spaccio, la criminalità, la dipendenza dal potere, dal denaro, dall’approvazione. Il lupo è anche l’esclusione sociale, il sentirsi invisibili, il crescere senza alternative. È ciò che spaventa perché non è lontano: è nelle strade, nelle scuole, a volte nelle nostre case. E, in forma diversa, può abitare dentro chiunque.</p>
+
+<br>
+
+<p>La scelta di Francesco di non combattere il lupo con la violenza è una scelta radicale. Non è debolezza, ma coraggio. È la decisione di non semplificare la realtà, di non ridurre le persone ai loro errori. Questo messaggio è profondamente attuale: viviamo in una società che cancella, etichetta, esclude. Lo spettacolo propone invece un’alternativa difficile ma umana: la responsabilità, il dialogo, la possibilità di cambiamento.</p>
+
+<br>
+
+<p>Un altro tema centrale è quello del <i>perdono</i>, che nel nostro spettacolo non è mai facile o immediato. Non è dimenticare, non è giustificare. È una scelta che costa fatica, che mette in discussione l’orgoglio e la paura. Ma è anche l’unico modo per spezzare il ciclo dell’odio. Per i giovani, spesso feriti da relazioni spezzate, tradimenti, delusioni, questo messaggio non è religioso in senso stretto: è profondamente umano.</p>
+
+<br>
+
+<p>Il nostro spettacolo non vuole dire che tutti diventeranno santi, né che il mondo cambierà da un giorno all’altro. Vuole dire che <i>ogni scelta conta</i>, anche la più piccola. Francesco non salva il mondo: salva il suo modo di stare nel mondo. E questo, lentamente, cambia anche ciò che lo circonda. È una rivoluzione silenziosa, fatta di coerenza, di ascolto, di rifiuto della violenza come unica risposta.</p>
+
+<br>
+
+<p>Questo Cantico rimodernizzato parla ai giovani perché nasce dalle loro domande: <i>Chi sono? Vale la pena restare buoni? Posso cambiare anche se ho sbagliato? Posso scegliere una strada diversa da quella che tutti si aspettano da me?</i> Non dà soluzioni facili, ma invita a non smettere di cercare.</p>
+
+<br>
+
+<p>In un tempo in cui tutto corre veloce, questo spettacolo chiede di fermarsi. Di guardare. Di riconoscere l’altro non come un nemico, ma come una creatura, fragile e contraddittoria, esattamente come noi. Ed è per questo che il nostro Francesco è giovane: perché questo messaggio, oggi, può essere credibile solo se nasce <i>dai giovani e per i giovani</i>.
+</p>
+</section>
+
+      </main>
+
+      <script>
+document.addEventListener('DOMContentLoaded', function(){
+  const hamb = document.querySelector('#hamb');
+  const mobile = document.querySelector('#mobileMenu');
+  if(hamb && mobile){
+    hamb.addEventListener('click', () => {
+      mobile.style.display = mobile.style.display === 'block' ? 'none' : 'block';
+    });
+  }
+  // add fade-up to visible cards
+  const els = document.querySelectorAll('.fade-up');
+  els.forEach((el, i) => {
+    el.style.animationDelay = (i * 80) + 'ms';
+  });
+});
+</script>
+      <footer class="container"> 
+<p>© Progetto Teatro — Creato dall'ingeniere </p> 
+<p>⊹₊ ˚‧︵‿₊୨୧₊‿︵‧ ˚ ₊⊹</p> 
+</footer>
+
+    </body>
+    </html>
+

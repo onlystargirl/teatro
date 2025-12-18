@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Cantico — Progetto Teatro</title>
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <meta name="description" content="Progetto teatrale scuola - sito ufficiale">
+  <style>
+:root{
+  --bg:#0f0f12;
+  --card:#fff;
+  --accent:#b52324;
+  --muted:#bdbdbd;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter, system-ui; background:linear-gradient(180deg,#0c0c0f 0%, #101217 60%); color:var(--card);}
+.container{max-width:1100px;margin:32px auto;padding:24px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;backdrop-filter: blur(4px);}
+.header{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;}
+.brand{display:flex;align-items:center;gap:14px}
+.logo{width:52px;height:52px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#6b0f12);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff}
+.brand h1{font-size:1.3rem;color:var(--card)}
+.nav{display:flex;gap:12px;align-items:center}
+.nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:600}
+.nav a:hover{color:var(--card);background:rgba(255,255,255,0.04)}
+.hamburger{display:none;background:none;border:1px solid rgba(255,255,255,0.04);padding:8px;border-radius:8px;color:var(--card)}
+
+/* hero */
+.hero{padding:56px 24px;border-radius:12px;margin:18px 0;background:linear-gradient(180deg, rgba(181,35,36,0.12), rgba(0,0,0,0.18));box-shadow:0 8px 30px rgba(0,0,0,0.45);text-align:center;}
+.hero h2{font-size:2.2rem;margin-bottom:8px}
+.hero p{color:var(--muted);max-width:820px;margin:0 auto;line-height:1.6}
+
+/* cantico sections */
+section{margin-top:40px}
+h3{color:var(--accent);margin-bottom:12px}
+.poem{background:rgba(255,255,255,0.05);padding:20px;border-radius:12px;font-family:"Georgia",serif;line-height:1.8;white-space:pre-line}
+.parafrasi{background:rgba(255,255,255,0.03);padding:20px;border-radius:12px;line-height:1.6}
+.spiegazione{color:var(--muted);line-height:1.6;margin-top:12px}
+blockquote{border-left:4px solid var(--accent);padding-left:12px;margin:16px 0;color:var(--muted);font-style:italic}
+
+/* footer */
+footer{padding:28px;text-align:center;color:var(--muted);margin-top:30px;border-top:1px solid rgba(255,255,255,0.1)}
+  </style>
+</head>
+<body>
+  <header class="header container" role="banner">
+    <div class="brand">
+      <div class="logo">PT</div>
+      <h1>Progetto Teatro</h1>
+    </div>
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="copione.html">Copione</a>
+      <a href="musiche.html">Musiche</a>
+      <a href="personaggi.html">Personaggi</a>
+      <a href="calendario.html">Calendario</a>
+      <a href="galleria.html">Galleria</a>
+      <a href="materiali.html">Materiali</a>
+      <a href="contatti.html">Contatti</a>
+    </nav>
+    <button id="hamb" class="hamburger" aria-label="Apri menu">☰</button>
+  </header>
+
+  <main class="container content" role="main">
+    <div class="hero">
+      <h2>Cantico delle Creature</h2>
+      <p>Il primo grande testo poetico in volgare italiano, scritto da San Francesco d’Assisi tra il 1224 e il 1226. Un inno universale alla natura e alla fratellanza.</p>
+    </div>
+
+    <section>
+      <h3>Testo originale</h3>
+      <div class="poem">
+Altissimu, onnipotente bon Signore,
+Tue so’ le laude, la gloria e l’honore et onne benedictione.
+
+Ad Te solo, Altissimo, se konfano,
+et nullu homo ène dignu te mentovare.
+
+Laudato si’, mi’ Signore, cum tucte le tue creature,
+spetialmente messor lo frate Sole,
+lo qual è iorno, et allumini noi per lui.
+
+Et ellu è bellu e radiante cum grande splendore:
+de Te, Altissimo, porta significazione.
+
+Laudato si’, mi’ Signore, per sora Luna e le stelle:
+in celu l’ài formate clarite et pretiose et belle.
+
+Laudato si’, mi’ Signore, per frate Vento
+et per aere et nubilo et sereno et onne tempo,
+per lo quale a le tue creature dài sustentamento.
+
+Laudato si’, mi’ Signore, per sora Aqua,
+la quale è multo utile et humile et pretiosa et casta.
+
+Laudato si’, mi’ Signore, per frate Focu,
+per lo quale ennallumini la nocte:
+ed ello è bello et jocundo et robustoso et forte.
+
+Laudato si’, mi’ Signore, per sora nostra matre Terra,
+la quale ne sustenta et governa,
+et produce diversi fructi con coloriti flori et herba.
+
+Laudato si’, mi’ Signore, per quelli ke perdonano per lo Tuo amore
+et sostengono infirmitate et tribulatione.
+
+Beati quelli ke ‘l sosterrano in pace,
+ka da Te, Altissimo, sirano incoronati.
+
+Laudato si’, mi’ Signore, per sora nostra Morte corporale,
+da la quale nullu homo vivente pò scappare.
+
+Guai a quelli ke morrano ne le peccata mortali;
+beati quelli ke trovarà ne le Tue sanctissime voluntati,
+ka la morte secunda no ‘l farrà male.
+
+Laudate et benedicete mi’ Signore,
+et rengratiate et serviateli cum grande humilitate.
+      </div>
+    </section>
+
+    <section>
+      <h3>Parafrasi</h3>
+      <div class="poem">
+Signore buono, altissimo ed onnipotente,
+tue sono le lodi, la gloria, l’onore e ogni tipo di benedizione.
+A te solo, Altissimo, si addicono
+e nessun uomo è degno di nominarti.
+Sii lodato, o mio Signore, per mezzo di tutte le tue creature,
+
+e in particolare per fratello Sole,
+che è il giorno, e tu ci mandi luce per tramite suo.
+E lui è bello e raggiante con gran splendore:
+per merito tuo, Altissimo, porta significato.
+Sii lodato, mio Signore, per sorella Luna e le stelle;
+
+le hai create in cielo luminose, belle e preziose.
+Sii lodato, mio Signore, per fratello Vento
+e per il cielo sia nuvoloso sia sereno e per ogni fenomeno
+atmosferico, per cui dai sostentamento alle tue creature.
+Sii lodato, mio Signore, per sorella Acqua,
+
+che è molto utile e umile e preziosa e incontaminata.
+Sii lodato, mio Signore, per fratello Fuoco,
+con cui illumini la notte:
+ed esso è bello, felice, vivido e robusto.
+Sii lodato, mio Signore, per la nostra sorella Madre terra,
+
+che ci nutre e ci dà vita,
+e produce molti frutti con fiori colorati e foglie.
+Sii lodato, mio Signore, per coloro che perdonano per tuo amore,
+e [per questo] sostengono dolori e preoccupazioni.
+Beati quelli che sosterranno ciò in pace,
+
+perché saranno incoronati da te, Altissimo.
+Sii lodato, mio Signore, per nostra sorella Morte fisica,
+da cui nessun uomo può sfuggire:
+guai a coloro che morranno in peccato mortale;
+beati quelli che [la Morte] troverà nella tua santissima grazia
+
+poiché la dannazione eterna non li avrà.
+Lodate e benedicete il mio Signore e ringraziatelo
+e servitelo con gran umiltà. </div>
+    </section>
+
+    <section>
+      <h3>Spiegazione e dettagli</h3>
+      <div class="poem">
+        Il Cantico delle creature di Francesco d'Assisi è probabilmente il primo testo poetico in volgare italiano giunto fino a noi. Si presenta come una 'lauda' in cui il santo eleva un commosso inno alla potenza di Dio, attraverso l'elenco degli elementi del creato che vengono invitati ad unirsi a lui in una preghiera comune. Il canto di lode è permeato da una visione positiva della natura, in cui si vede riflessa l’immagine del Creatore e sottolinea il senso di fratellanza fra l’uomo e il creato tale da diventare uno strumento di lode a Dio.
+
+Il componimento risale agli ultimi anni di vita di S. Francesco (1224-1226) e secondo un'ipotesi sarebbe stato scritto in due momenti successivi, di cui il secondo nell'imminenza della morte. Infatti risalirebbero ad allora gli ultimi versi sulle malattie e la morte che sembrerebbero estranei al tema, rispetto alla serena contemplazione della prima parte.
+L'intonazione del testo ricorda molto i cantici religiosi della tradizione biblica, la lingua è il volgare umbro con l'inserzione di molti latinismi, conformemente a molti testi poetici delle origini della letteratura italiana di cui può considerarsi un punto di partenza. Il testo più ricco e accurato nell’offrirci informazioni utili sulla storia del testo tra le biografie su S. Francesco, è la Compilatio Assisiensis.
+
+È possibile individuare tre chiavi di lettura di cui la prima è costituita dal contesto immediato che ha dato vita alla prima parte della composizione, la seconda dalla dimensione esistenziale e la sensibilità di Francesco nei confronti della natura creata, infine la terza dalle due strofe finali relative al perdono e alla morte.
+
+Il punto di partenza del Cantico delle creature non può essere che Dio, che viene lodato in base a ciò che ha creato: le cose quindi sono considerate sia in sé, sia in relazione con Dio. San Francesco non esalta perciò la natura di per sé, ma non respinge nemmeno il mondo terreno come è proprio di altre tendenze religiose del Medioevo, che insistono sul “contemptus mundi”, anzi esalta la bellezza del creato in quanto porta “significatione” di Dio stesso. All’interno di questo nuovo senso di percepire il creato San Francesco nel Cantico delle creature mostra anche un diverso modo di valutare il corpo, che assume una dignità nuova e si libera da falsi pudori, testimonia la riconciliazione tra corpo e anima e rivaluta la bellezza fisica. Il rapporto tra anima e corpo, simbolicamente Dio e uomo, trova una perfetta sintesi nella vita terrena di Cristo, la cui imitazione sara’ il modello della religiosità di San Francesco e dei suoi seguaci.
+
+Bisogna considerare inoltre un altro punto di vista: nel Cantico delle creature San Francesco loda il creato anche in relazione all’uomo in quanto a lui utile; d’altra parte però, se per le creature la lode è incondizionata, tra gli uomini (essendo le uniche creature destinate alla salvezza o alla dannazione) sono lodati solo “quelli ke perdonano”.
+
+Nel Cantico delle creature l’ultima lode è dedicata alla morte corporale: essa è avvicinata come sorella e accettata nella sua naturalità. In questo modo San Francesco d'Assisi si libera dal terrore della “prima morte”.
+
+Ben diverso è il suo atteggiamento nei confronti della morte dell’anima: l’inno appare infatti diviso in due parti.
+
+Se nella prima troviamo la gioia e l’ottimismo che abbracciano la natura, nella seconda si ha una specie di predica ai peccatori, una minaccia per gli uomini che, non vivendo in armonia con Dio (e quindi con la natura e con gli altri uomini che ne sono sua immagine) incorreranno nella dannazione.</div>
+    </section>
+
+  <script>
+document.addEventListener('DOMContentLoaded', function(){
+  const hamb = document.querySelector('#hamb');
+  const mobile = document.querySelector('#mobileMenu');
+  if(hamb && mobile){
+    hamb.addEventListener('click', () => {
+      mobile.style.display = mobile.style.display === 'block' ? 'none' : 'block';
+    });
+  }
+  // add fade-up to visible cards
+  const els = document.querySelectorAll('.fade-up');
+  els.forEach((el, i) => {
+    el.style.animationDelay = (i * 80) + 'ms';
+  });
+});
+</script>
+     <footer class="container"> 
+<p>© Progetto Teatro — Creato dall'ingeniere </p> 
+<p>⊹₊ ˚‧︵‿₊୨୧₊‿︵‧ ˚ ₊⊹</p> 
+</footer>
+
+    </body>
+    </html>

@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Musiche — Progetto Teatro</title>
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <meta name="description" content="Progetto teatrale scuola - sito ufficiale">
+  <style>
+:root{
+  --bg:#0f0f12;
+  --card:#fff;
+  --accent:#b52324;
+  --muted:#bdbdbd;
+  --glass: rgba(255,255,255,0.04);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:linear-gradient(180deg,#0c0c0f 0%, #101217 60%); color:var(--card); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;}
+.container{max-width:1100px;margin:32px auto;padding:24px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;backdrop-filter: blur(4px);}
+.header{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;}
+.brand{display:flex;align-items:center;gap:14px}
+.logo{width:52px;height:52px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#6b0f12);display:flex;align-items:center;justify-content:center;font-weight:700;box-shadow:0 6px 18px rgba(181,35,36,0.16)}
+.brand h1{font-size:1.3rem;color:var(--card)}
+.nav{display:flex;gap:12px;align-items:center}
+.nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:600}
+.nav a:hover{color:var(--card);background:var(--glass)}
+
+.hamburger{display:none;background:none;border:1px solid rgba(255,255,255,0.04);padding:8px;border-radius:8px;color:var(--card)}
+
+/* music cards */
+.music-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:24px}
+.music-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,0.5);transition:transform .25s ease, box-shadow .25s ease}
+.music-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,0.6)}
+.music-card h3{color:var(--accent);margin-bottom:6px}
+.music-card p{color:var(--muted);margin-bottom:10px}
+.music-card audio{width:100%;outline:none;margin-top:8px}
+.music-card a.youtube-link{display:inline-block;margin-top:10px;padding:8px 12px;border-radius:8px;background:var(--accent);color:white;text-decoration:none;font-weight:700;transition:background .2s}
+.music-card a.youtube-link:hover{background:#8f1a1b}
+
+/* footer */
+footer{padding:28px;text-align:center;color:var(--muted);margin-top:30px;border-top:1px solid rgba(255,255,255,0.02)}
+
+.badge{background:rgba(255,255,255,0.04);padding:6px 10px;border-radius:999px;color:var(--muted);font-weight:700}
+</style>
+</head>
+<body>
+  <header class="header container" role="banner">
+    <div class="brand">
+      <div class="logo">PT</div>
+      <h1>Progetto Teatro</h1>
+    </div>
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="copione.html">Copione</a>
+      <a href="musiche.html">Musiche</a>
+      <a href="personaggi.html">Personaggi</a>
+      <a href="calendario.html">Calendario</a>
+      <a href="galleria.html">Galleria</a>
+      <a href="materiali.html">Materiali</a>
+      <a href="contatti.html">Contatti</a>
+    </nav>
+    <button id="hamb" class="hamburger" aria-label="Apri menu">☰</button>
+    <div id="mobileMenu" class="mobile-menu" style="display:none">
+      <a href="index.html">Home</a>
+      <a href="copione.html">Copione</a>
+      <a href="musiche.html">Musiche</a>
+      <a href="personaggi.html">Personaggi</a>
+      <a href="calendario.html">Calendario</a>
+      <a href="galleria.html">Galleria</a>
+      <a href="materiali.html">Materiali</a>
+      <a href="contatti.html">Contatti</a>
+    </div>
+  </header>
+
+  <main class="container content" role="main">
+    <h2>Musiche</h2>
+    <p>Playlist delle tracce con titolo, compositore, scena e link YouTube.</p>
+
+    <div class="music-grid">
+      <div class="music-card">
+        <h3>Sorella Luna</h3>
+        <p>La Luna - Angelo Branduardi</p>
+          <audio controls>
+          <source src="La_Luna_Angelo_Branduardi.mp3" type="audio/mpeg">
+          Il tuo browser non supporta l'audio.
+        </audio>
+        <a class="youtube-link" href="https://youtu.be/tCk8heLE4tU?si=UuEY-pk6eCMROhOr target="_blank">Apri su YouTube</a>
+      </div>
+
+      <div class="music-card">
+        <h3>Introduzione</h3>
+        <p>The Social Network OST – Hand Covers Bruise</p>
+        <audio controls>
+          <source src="Hand_Covers_Bruise.mp3" type="audio/mpeg">
+          Il tuo browser non supporta l'audio.
+        </audio>
+        <a class="youtube-link" href="https://youtu.be/9SBNCYkSceU?si=s_b3GhmYIwszGOAa" target="_blank">Apri su YouTube</a>
+      </div>
+
+      <div class="music-card">
+        <h3>Colonna Sonora di Samia</h3>
+        <p>Iris - Goo Goo Dolls</p>
+        <audio controls>
+          <source src="Iris.mp3" type="audio/mpeg">
+          Il tuo browser non supporta l'audio.
+        </audio>
+        <a class="youtube-link" href="https://youtu.be/xK4ZqrLys_k?si=Ur5J98WkHiIwmlV9" target="_blank">Apri su YouTube</a>
+      </div>
+
+<div class="music-card">
+        <h3>Sorella Acqua</h3>
+        <p>Ocean Eyes - Billie Eilish</p>
+        <audio controls>
+          <source src="Ocean_Eyes.mp3" type="audio/mpeg">
+          Il tuo browser non supporta l'audio.
+        </audio>
+        <a class="youtube-link" href="https://youtu.be/viimfQi_pUw?si=7Q52cRIRJYDFhp7z" target="_blank">Apri su YouTube</a>
+      </div>
+
+<div class="music-card">
+        <h3>Sorella Madre Terra</h3>
+        <p>Deslocado - Napa</p>
+        <audio controls>
+          <source src="Deslocado.mp3" type="audio/mpeg">
+          Il tuo browser non supporta l'audio.
+        </audio>
+        <a class="youtube-link" href="https://youtu.be/viimfQi_pUw?si=7Q52cRIRJYDFhp7z" target="_blank">Apri su YouTube</a>
+      </div>
+
+<div class="music-card">
+        <h3>Sorelle Stelle</h3>
+        <p>Reflections - The Neighbourhood</p>
+        <audio controls>
+          <source src="Reflections.mp3" type="audio/mpeg">
+          Il tuo browser non supporta l'audio.
+        </audio>
+        <a class="youtube-link" href="https://youtu.be/viimfQi_pUw?si=7Q52cRIRJYDFhp7z" target="_blank">Apri su YouTube</a>
+      </div>
+
+<div class="music-card">
+        <h3>Il Lupo (Spacciatore)</h3>
+        <p>Povero Mmano - Co'sang</p>
+        <audio controls>
+          <source src="Povere_mmano.mp3" type="audio/mpeg">
+          Il tuo browser non supporta l'audio.
+        </audio>
+        <a class="youtube-link" href="https://youtu.be/viimfQi_pUw?si=7Q52cRIRJYDFhp7z" target="_blank">Apri su YouTube</a>
+      </div>
+
+
+    </div>
+
+    <p class="badge"><i>"You drew stars around my scars"</i></p>
+  </main>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function(){
+    const hamb = document.querySelector('#hamb');
+    const mobile = document.querySelector('#mobileMenu');
+    if(hamb && mobile){
+      hamb.addEventListener('click', () => {
+        mobile.style.display = mobile.style.display === 'block' ? 'none' : 'block';
+      });
+    }
+  });
+  </script>
+
+       <footer class="container"> 
+<p>© Progetto Teatro — Creato dall'ingeniere </p> 
+<p>⊹₊ ˚‧︵‿₊୨୧₊‿︵‧ ˚ ₊⊹</p> 
+</footer>
+
+    </body>
+    </html>
